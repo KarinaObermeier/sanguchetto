@@ -1,53 +1,33 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-	<title>Alta Producto</title>
-		
-	</head>
-	<body>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+    <title>Dar Alta Producto</title>
+</head>
 
-	
-	
-	<div id="wrap">
-		<div class="container">
-    		<div class="starter-template">
-      			<h1>Dar de alta ingrediente</h1>
-      			<div class="row">
-          			<div class="col-md-12">
-          				<form:form class="form-horizontal" action="darAlta" commandName="ingrediente" role="form" method="post">
-          					<div class="form-group">
-          						<label for="nombre" class="control-label col-md-4">Nombre</label>
-   						        <div class="col-md-4">
-									<form:input class="form-control" id="nombre" path="nombre"/>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="precio" class="control-label col-md-4">Precio</label>
-               					<div class="col-md-4">
-									<form:input class="form-control" id="precio" path="precio"/>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="tipo" class="control-label col-md-4">Tipo</label>
-               					<div class="col-md-4">
-									<form:select class="form-control" id="precio" path="tipo">
-				          				<form:options items="${tipos}"/>
-				      			  	</form:select>
-								</div>
-							</div>
-							<div class="form-group">
-								<input type="submit" class="btn btn-primary" value="Dar Alta"/>
-							</div>
-						</form:form>
-					</div>
-				</div>
-		    </div>
-	    </div>
-      	<div id="push"></div>
-	</div><!-- /#wrap -->
-
-
+<body>
+<form:form method="POST" action="/TpSangucheto/darAlta">
+   <table>
+    <tr>
+        <td><form:label path="nombre" >Seleccione Producto</form:label></td>
+        <td><form:input path="nombre" /></td>
+    </tr>
+     <tr>
+        <td><form:label path="precio">Precio</form:label></td>
+        <td><form:input path="precio" /></td>
+    </tr>
+    <tr>
+     <form:label path="tipo">Tipo</form:label>
+      <form:select  path="tipo">
+       				<form:options items="${tipos}"/>
+   	  </form:select>
+	</tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="Submit"/>
+        </td>
+    </tr>
+  </table>  
+</form:form>
 </body>
 </html>
+

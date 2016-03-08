@@ -1,25 +1,13 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Pedido de Alta</title>
-	
-	</head>
-	
-	<body>
-		
-		<div id="wrap">
-			<div class="container">
-
-				<div class="starter-template">
-	        		<h1>Resultado</h1>
-	        		<p class="lead">${mensaje}</p>
-	      		</div>
-	    	</div><!-- /.container -->
-			<div id="push"></div>
-		</div><!-- /#wrap -->
-
-
-
-	</body>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<html>
+<head>
+    <title>Resultado de Dar de Alta a Ingrediente</title>
+</head>
+<body>
+   <table>
+    <tr>
+        <td>${mensaje}</td>
+    </tr>
+  </table>  
+</body>
 </html>
